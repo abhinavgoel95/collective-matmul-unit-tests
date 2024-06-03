@@ -4,7 +4,7 @@ This repo contains a unit test to showcase the performance with and without the 
 
 
 ## Running the tests
-To run, `bash run_test.sh`. 
+To run, `bash run_test.sh`. This test runs on a single H100 node with 8 GPUs.
 
 Ensure `--xla_gpu_threshold_for_windowed_einsum_mib=0 --xla_gpu_multi_streamed_windowed_einsum=true --xla_gpu_use_memcpy_local_p2p=true` XLA flags are set in order to use collective matmul. 
 
