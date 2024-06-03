@@ -10,4 +10,4 @@ export XLA_FLAGS="--xla_gpu_enable_latency_hiding_scheduler=true
 #NSYS_OUTPUT_FILE=/pax/nccl_unit_tests/profiles/llama-70b-tp-8-bf16
 #NSYS_CMD="nsys profile -s none -o ${NSYS_OUTPUT_FILE} --force-overwrite true --capture-range=cudaProfilerApi --capture-range-end=stop"
 
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ${NSYS_CMD} python /pax/nccl_unit_tests/tp_test.py --tp 8
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 ${NSYS_CMD} python /pax/nccl_unit_tests/unit_test_fprop.py --tp 8
