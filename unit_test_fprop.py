@@ -42,10 +42,10 @@ def main():
     parser = argparse.ArgumentParser(description='MLP Unit Test with pjit')
     parser.add_argument("--dp", dest="dp", type=int, default=1)
     parser.add_argument("--zp", dest="zp", type=int, default=1)
-    parser.add_argument("--tp", dest="tp", type=int, default=8)
-    parser.add_argument("--batch_size", dest="batch_size", type=int, default=2)
-    parser.add_argument("--seq_len", dest="seq_len", type=int, default=8192)
-    parser.add_argument("--hidden_size", dest="hidden_size", type=int, default=8192)
+    parser.add_argument("--tp", dest="tp", type=int, default=4)
+    parser.add_argument("--batch_size", dest="batch_size", type=int, default=2) #GPT-175B FFN shape
+    parser.add_argument("--seq_len", dest="seq_len", type=int, default=2048) #GPT-175B FFN shape
+    parser.add_argument("--hidden_size", dest="hidden_size", type=int, default=12288) #GPT-175B FFN shape
     parser.add_argument("--use_fp8", action="store_true", default=False)
     parser.add_argument("--profile", action="store_true", default=True)
     args = parser.parse_args()
