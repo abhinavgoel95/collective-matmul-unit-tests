@@ -72,7 +72,7 @@ def main():
     mesh = Mesh(np.array(jax.devices()).reshape(tuple(mesh_shape.values())), tuple(mesh_shape.keys()))
 
     pjitted_train_step = pjit(partial(train_step, model),
-                              out_shardings=PartitionSpec(('dp', 'zp'), 'tp', None))
+                              out_shardings=PartitionSpec(('dp', 'zp'), None, 'tp'))
 
     if args.profile:
         import ctypes
